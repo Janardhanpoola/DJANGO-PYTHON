@@ -1,0 +1,89 @@
+
+<div class="bg-image">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/register.css' %}"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <div class="container">
+    <div class="row d-flex justify-content-center">
+    <div class="col-md-6">
+    <div class="card shadow-sm">
+    <article class="card-body mx-auto">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+
+        <form method="POST" action=''>
+            {% csrf_token %}
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            {{form.username}}
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+               {{form.email}}
+        </div> <!-- form-group// -->
+ 
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+           {{form.password1}}
+        </div> <!-- form-group// -->
+        
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+          {{form.password2}}
+        </div> <!-- form-group// --> 
+        
+        {{form.errors}}
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+        </div> <!-- form-group// -->      
+        <p class="text-center">Have an account? <a href="{% url 'login' %}">Log In</a> </p>                                                                 
+    </form>
+    </article>
+    </div> <!-- card.// -->
+    </div>
+    </div>
+    </div>
+    </div>
+
+<script>
+
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder='Username..';
+    form_fields[2].placeholder='Email..';
+    form_fields[3].placeholder='Enter password...';
+    form_fields[4].placeholder='Re-enter Password...';
+
+
+    for (var field in form_fields){	
+        form_fields[field].className += ' form-control'     
+    }
+
+
+</script>
+    
+
+
+
+
+ <!--
+<form method='POST' action=''>
+
+    {% for each in form%}
+        {{each.label}}
+        {{each}}
+        <br/>
+    {% endfor %}
+    <input class='button button-primary' type='submit' name='create user' value='Create User'>
+</form>
+-->

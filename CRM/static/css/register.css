@@ -1,0 +1,22 @@
+
+
+.btn-twitter {
+    background-color: #42AEEC;
+    color: #fff;
+}
+.btn-facebook {
+    background-color: #405D9D;
+    color: #fff;
+}
+
+
+/*** delete this ***/
+
+.bg-image {
+  background-image: url("https://i.ibb.co/yyzrxMD/videoblocks-blue-animated-studio-background-with-moving-chaotic-transparent-shapes-from-left-to-right-loop-without-breaks-b23nsmajl-thumbnail-full01.png");
+  width:100%;
+  padding:150px 0;
+ 
+.card {
+  margin-top:50px;
+}

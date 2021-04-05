@@ -1,0 +1,20 @@
+#logo{
+}
+
+body{
+    background-color: lightyellow;
+}
+
+
+#total-orders{
+    background-color: rgb(195, 224, 133);
+}
+
+
+#orders-delivered{
+    background-color:rgb(77, 133, 77);
+}
+
+#orders-pending{
+    background-color:orange;
+}
