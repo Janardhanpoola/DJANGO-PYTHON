@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'django_filters'
+    'accounts.apps.AccountsConfig',
+    'django_filters',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,17 @@ WSGI_APPLICATION = 'CRM.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE':'django.db.backends.postgresql',
+#         'NAME':'crm_demo', #database name
+#         'USER':'postgres',
+#         'PASSWORD':'django123',
+#         'PORT':'5432',
+#         'HOST': 'database-1.ccilrplspe9h.ap-south-1.rds.amazonaws.com'
+#     }
+# }
 
 DATABASES = {
     'default': {
@@ -134,3 +146,20 @@ MEDIA_URL='/images/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/images')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'janardhan.poola.6@gmail.com'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = True
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_FILE_OVERWRITE=False
+AWS_DEFAULT_ACL=None
+
+
+AWS_ACCESS_KEY_ID='AKIA6G4WO26Y7QS7XN3F'
+AWS_SECRET_ACCESS_KEY='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'
+AWS_STORAGE_BUCKET_NAME='jpoola-crm-bucket'
+AWS_S3_REGION_NAME = "ap-south-1"
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

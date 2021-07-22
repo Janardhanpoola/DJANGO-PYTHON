@@ -61,14 +61,14 @@ def registerpage(request):
 
         if form.is_valid():
             user=form.save()
-            group=Group.objects.get(name='customer') #we want registered users to be a part of customer group..so getting the group named customer
+            # group=Group.objects.get(name='customer') #we want registered users to be a part of customer group..so getting the group named customer
 
-            user.groups.add(group) #adding the user to customer group
+            # user.groups.add(group) #adding the user to customer group
 
-            Customer.objects.create( #assigning  customer a user as and when registered
-                user=user,
-                name=user.username
-            )
+            # Customer.objects.create( #assigning  customer a user profile(user) as and when registered
+            #     user=user,
+            #     name=user.username
+            # )
 
             usern=request.POST.get('username')
            

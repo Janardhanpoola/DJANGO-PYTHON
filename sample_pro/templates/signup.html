@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+</head>
+<body bgcolor="violet">
+    <form action="" method="POST">
+        <div class="container">
+        {% csrf_token %}
+        Username:  <input type="text" name='username'><br/><br/>
+        First name: <input type="text" name='first_name'><br/><br/>
+        Last name: <input type="text" name='last_name'><br/><br/>
+        Email:     <input type="email" name='email'><br/><br/>
+        Password:  <input type="password" name='password1'><br/><br/>
+        Confirm password :<input type="password" name='password2'><br/><br/>
+        <input type="submit" value='signup'>
+        </div>
+
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

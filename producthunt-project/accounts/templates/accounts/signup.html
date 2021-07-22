@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% if error %}
+
+{{error}}  <!-- if username is already taken it displays the error on the page itself -->
+
+{% endif %}
+
+
+
+<h1> Sign up </h1>
+<br/>
+<form method="POST" action="{% url 'signup' %}">
+{% csrf_token %}     
+    Username: 
+    <br/>
+    <input type="text" name="username">
+    <br/>
+    <br/>
+    Password: 
+    <br/>
+    <input type="password" name="password1">
+    <br/>
+    <br/>
+    Confirm Password:
+    <br/>
+    <input type="password" name="password2">    
+    <br/>
+    <br/>
+    <input class="btn btn-primary" type="submit" value="Signup">
+    
+
+</form>
+
+
+
+{% endblock %}
